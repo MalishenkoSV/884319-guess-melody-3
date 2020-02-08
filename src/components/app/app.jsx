@@ -1,14 +1,18 @@
 import React from "react";
 import WelcomeScreen from "../welcome-screen/welcome.jsx";
+import PropTypes from "prop-types";
 
-
+const welcomeButtonHandler = () => {};
 const App = (props) => {
-  // eslint-disable-next-line react/prop-types
   const {errorsCount} = props;
 
   return (
-    <WelcomeScreen errorsCount={errorsCount} />
+    <WelcomeScreen errorsCount={errorsCount} onWelcomeButtonClick={welcomeButtonHandler}/>
   );
+};
+
+App.propTypes = {
+  errorsCount: PropTypes.number.isRequired,
 };
 
 
