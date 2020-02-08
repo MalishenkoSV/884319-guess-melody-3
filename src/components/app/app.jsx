@@ -1,6 +1,6 @@
 import React from "react";
 import WelcomeScreen from "../welcome-screen/welcome.jsx";
-
+import PropTypes from "prop-types";
 
 const App = (props) => {
   const {errorsCount} = props;
@@ -8,6 +8,10 @@ const App = (props) => {
   return (
     <WelcomeScreen errorsCount={errorsCount} />
   );
+};
+
+App.propTypes = {
+  errorsCount: PropTypes.number.isRequired,
 };
 
 
