@@ -1,9 +1,7 @@
-import React from "react";
-import renderer from "react-test-renderer";
-import App from "./app.jsx";
 
+export const AVATAR_URL = `https://api.adorable.io/avatars/128`;
 
-const questions = [
+export const QUESTIONS = [
   {
     type: `genre`,
     genre: `rock`,
@@ -27,25 +25,18 @@ const questions = [
       src: `https://upload.wikimedia.org/wikipedia/commons/4/4e/BWV_543-fugue.ogg`,
     },
     answers: [{
-      picture: `https://api.adorable.io/avatars/128/1`,
+      picture: `${AVATAR_URL}/${1}`,
       artist: `John Snow`,
     }, {
-      picture: `https://api.adorable.io/avatars/128/2`,
+      picture: `${AVATAR_URL}/${2}`,
       artist: `Jack Daniels`,
     }, {
-      picture: `https://api.adorable.io/avatars/128/3`,
+      picture: `${AVATAR_URL}/${3}`,
       artist: `Jim Beam`,
     }],
   },
 ];
-
-it(`Render App`, () => {
-  const tree = renderer
-    .create(<App
-      errorsCount={3}
-      questions={questions}
-    />)
-    .toJSON();
-
-  expect(tree).toMatchSnapshot();
-});
+export const GameType = {
+  ARTIST: `artist`,
+  GENRE: `genre`,
+};
